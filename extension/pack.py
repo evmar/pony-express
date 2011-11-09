@@ -6,15 +6,15 @@ SHRINK = False
 
 TEMPLATE = """
 <!DOCTYPE html>
-<style>@@../view.css@@</style>
+<style>@@../ui/view.css@@</style>
 
 <body>
 <div id=threadlist></div>
 <div id=message></div>
 
-<script>@@../status2.js@@
-@@../view.js@@
-@@../pipermail.js@@
+<script>@@../ui/status2.js@@
+@@../ui/view.js@@
+@@../pipermail/pipermail.js@@
 @@hijack.js@@
 
 pipermail.status = function(text) {

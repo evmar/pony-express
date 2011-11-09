@@ -6,15 +6,22 @@ this.isPiperMail = (url) ->
   a = document.createElement 'a'
   a.href = url
 
-  matches = a.pathname.match ///
-    /pipermail/
-    ([^/]+)/
-    (.*)
-  ///
+  if a.protocol != 'file:'
+    matches = a.pathname.match ///
+      /pipermail/
+      ([^/]+)/
+      (.*)
+    ///
+  else
+    # Special-case tests for this extension itself.
+    matches = a.pathname.match ///
+      /pony-express/testdata/
+      ([^/]+)/
+      (.*)
+    ///
 
   if matches
     [_, list, rest] = matches
-    return null if list == 'extension'
   else if a.host.match /^lists./
     # Get more aggressive on lists.foobar.org URLs.
     matches = a.pathname.match ///

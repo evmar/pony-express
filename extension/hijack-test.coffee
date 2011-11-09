@@ -3,13 +3,10 @@
 module 'Extension'
 
 test 'isPiperMail', ->
-  pm = isPiperMail 'file:///test/pipermail/webkit-dev/index.html'
+  pm = isPiperMail 'file:///test/pony-express/testdata/webkit-dev/index.html'
   notEqual pm, null, "fire on local testing page"
   equals pm.list, 'webkit-dev'
-  equals pm.base, 'file:///test/pipermail/webkit-dev/'
-
-  pm = isPiperMail 'file:///home/evmar/pipermail/extension/qunit.html'
-  equals pm, null, "don't fire on the extension page"
+  equals pm.base, 'file:///test/pony-express/testdata/webkit-dev/'
 
   pm = isPiperMail 'file:///test/pipermail.html'
   equals pm, null, "don't match random occurrences of pipermail in URLs"
