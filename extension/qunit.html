@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+<link rel=stylesheet href=../testdata/qunit.css>
+<script src=../testdata/qunit.js></script>
+</head>
+
+<body>
+ <h1 id="qunit-header">extension tests</h1>
+ <h2 id="qunit-banner"></h2>
+ <div id="qunit-testrunner-toolbar"></div>
+ <h2 id="qunit-userAgent"></h2>
+ <ol id="qunit-tests"></ol>
+ <div id="qunit-fixture">test markup, will be hidden</div>
+
+<script src=hijack.js></script>
+<script src=hijack-test.js></script>
+
+<!-- There are no tests of this packed file, we just import it
+     to verify it has no syntax issues. -->
+<script src=ui.js></script>
+<script>
+test('ui.js parsed ok', function() {
+  notEqual(typeof ui, 'undefined');
+});
+</script>
+
+</body>
+</html>

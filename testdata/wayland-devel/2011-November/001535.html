@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [PATCH] compositor-*: check for surfaceless_gles2 instead of	surfaceless_opengl
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:wayland-devel%40lists.freedesktop.org?Subject=Re%3A%20%5BPATCH%5D%20compositor-%2A%3A%20check%20for%20surfaceless_gles2%20instead%20of%0A%09surfaceless_opengl&In-Reply-To=%3C1320158261-11816-1-git-send-email-ander.conselvan.de.oliveira%40intel.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="001536.html">
+
+  <style type="text/css">
+       pre {
+           white-space: pre-wrap; /* css-2.1, current FF, Opera, Safari */
+           }
+   </style>
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[PATCH] compositor-*: check for surfaceless_gles2 instead of	surfaceless_opengl</H1>
+    <B>Ander Conselvan de Oliveira</B> 
+    <A HREF="mailto:wayland-devel%40lists.freedesktop.org?Subject=Re%3A%20%5BPATCH%5D%20compositor-%2A%3A%20check%20for%20surfaceless_gles2%20instead%20of%0A%09surfaceless_opengl&In-Reply-To=%3C1320158261-11816-1-git-send-email-ander.conselvan.de.oliveira%40intel.com%3E"
+       TITLE="[PATCH] compositor-*: check for surfaceless_gles2 instead of	surfaceless_opengl">ander.conselvan.de.oliveira at intel.com
+       </A><BR>
+    <I>Tue Nov  1 07:37:41 PDT 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="001536.html">[PATCH] compositor-*: check for surfaceless_gles2 instead of	surfaceless_opengl
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1535">[ date ]</a>
+              <a href="thread.html#1535">[ thread ]</a>
+              <a href="subject.html#1535">[ subject ]</a>
+              <a href="author.html#1535">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>All the compositors are using GLES2 so check for the appropriate
+surfaceless extension.
+
+Signed-off-by: Ander Conselvan de Oliveira &lt;<A HREF="http://lists.freedesktop.org/mailman/listinfo/wayland-devel">ander.conselvan.de.oliveira at intel.com</A>&gt;
+---
+ compositor/compositor-drm.c     |    4 ++--
+ compositor/compositor-openwfd.c |    4 ++--
+ compositor/compositor-wayland.c |    4 ++--
+ compositor/compositor-x11.c     |    4 ++--
+ 4 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/compositor/compositor-drm.c b/compositor/compositor-drm.c
+index f11b788..02214f5 100644
+--- a/compositor/compositor-drm.c
++++ b/compositor/compositor-drm.c
+@@ -344,8 +344,8 @@ init_egl(struct drm_compositor *ec, struct udev_device *device)
+ 	}
+ 
+ 	extensions = eglQueryString(ec-&gt;base.display, EGL_EXTENSIONS);
+-	if (!strstr(extensions, &quot;EGL_KHR_surfaceless_opengl&quot;)) {
+-		fprintf(stderr, &quot;EGL_KHR_surfaceless_opengl not available\n&quot;);
++	if (!strstr(extensions, &quot;EGL_KHR_surfaceless_gles2&quot;)) {
++		fprintf(stderr, &quot;EGL_KHR_surfaceless_gles2 not available\n&quot;);
+ 		return -1;
+ 	}
+ 
+diff --git a/compositor/compositor-openwfd.c b/compositor/compositor-openwfd.c
+index c507ad9..4cda851 100644
+--- a/compositor/compositor-openwfd.c
++++ b/compositor/compositor-openwfd.c
+@@ -151,8 +151,8 @@ init_egl(struct wfd_compositor *ec)
+ 	}
+ 
+ 	extensions = eglQueryString(ec-&gt;base.display, EGL_EXTENSIONS);
+-	if (!strstr(extensions, &quot;EGL_KHR_surfaceless_opengl&quot;)) {
+-		fprintf(stderr, &quot;EGL_KHR_surfaceless_opengl not available\n&quot;);
++	if (!strstr(extensions, &quot;EGL_KHR_surfaceless_gles2&quot;)) {
++		fprintf(stderr, &quot;EGL_KHR_surfaceless_gles2 not available\n&quot;);
+ 		return -1;
+ 	}
+ 
+diff --git a/compositor/compositor-wayland.c b/compositor/compositor-wayland.c
+index 4f0b025..790fe96 100644
+--- a/compositor/compositor-wayland.c
++++ b/compositor/compositor-wayland.c
+@@ -129,8 +129,8 @@ wayland_compositor_init_egl(struct wayland_compositor *c)
+ 	}
+ 
+ 	extensions = eglQueryString(c-&gt;base.display, EGL_EXTENSIONS);
+-	if (!strstr(extensions, &quot;EGL_KHR_surfaceless_opengl&quot;)) {
+-		fprintf(stderr, &quot;EGL_KHR_surfaceless_opengl not available\n&quot;);
++	if (!strstr(extensions, &quot;EGL_KHR_surfaceless_gles2&quot;)) {
++		fprintf(stderr, &quot;EGL_KHR_surfaceless_gles2 not available\n&quot;);
+ 		return -1;
+ 	}
+ 
+diff --git a/compositor/compositor-x11.c b/compositor/compositor-x11.c
+index 4962b5e..544d7e2 100644
+--- a/compositor/compositor-x11.c
++++ b/compositor/compositor-x11.c
+@@ -134,8 +134,8 @@ x11_compositor_init_egl(struct x11_compositor *c)
+ 	}
+ 
+ 	extensions = eglQueryString(c-&gt;base.display, EGL_EXTENSIONS);
+-	if (!strstr(extensions, &quot;EGL_KHR_surfaceless_opengl&quot;)) {
+-		fprintf(stderr, &quot;EGL_KHR_surfaceless_opengl not available\n&quot;);
++	if (!strstr(extensions, &quot;EGL_KHR_surfaceless_gles2&quot;)) {
++		fprintf(stderr, &quot;EGL_KHR_surfaceless_gles2 not available\n&quot;);
+ 		return -1;
+ 	}
+ 
+-- 
+1.7.4.1
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="001536.html">[PATCH] compositor-*: check for surfaceless_gles2 instead of	surfaceless_opengl
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1535">[ date ]</a>
+              <a href="thread.html#1535">[ thread ]</a>
+              <a href="subject.html#1535">[ subject ]</a>
+              <a href="author.html#1535">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="http://lists.freedesktop.org/mailman/listinfo/wayland-devel">More information about the wayland-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<link rel=stylesheet href=view.css>
+
+<body>
+<div id=threadlist></div>
+<div id=message></div>
+
+<script src=status2.js></script>
+<script src=view.js></script>
+<script src=pipermail.js></script>
+<script>
+pipermail.status = function(text) {
+  if (text) status2.show(text);
+  else status2.clear();
+}
+pipermail.loadIndex('wayland-devel/', function(urls) {
+  pipermail.loadMonth(urls[0], function(threads) {
+    buildThreadList(threads);
+  })
+})
+
+</script>
+</body>
+

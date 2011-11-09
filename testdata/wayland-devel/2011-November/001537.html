@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> build wayland cairo-util.o Error  1
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:wayland-devel%40lists.freedesktop.org?Subject=Re%3A%20build%20wayland%20cairo-util.o%20Error%20%201&In-Reply-To=%3C20111101234112.GA27341%40google.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001536.html">
+   <LINK REL="Next"  HREF="001538.html">
+
+  <style type="text/css">
+       pre {
+           white-space: pre-wrap; /* css-2.1, current FF, Opera, Safari */
+           }
+   </style>
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>build wayland cairo-util.o Error  1</H1>
+    <B>Mandeep Singh Baines</B> 
+    <A HREF="mailto:wayland-devel%40lists.freedesktop.org?Subject=Re%3A%20build%20wayland%20cairo-util.o%20Error%20%201&In-Reply-To=%3C20111101234112.GA27341%40google.com%3E"
+       TITLE="build wayland cairo-util.o Error  1">msb at chromium.org
+       </A><BR>
+    <I>Tue Nov  1 16:41:12 PDT 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001536.html">[PATCH] compositor-*: check for surfaceless_gles2 instead of	surfaceless_opengl
+</A></li>
+        <LI>Next message: <A HREF="001538.html">Patch for updating gtk over wayland interface
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1537">[ date ]</a>
+              <a href="thread.html#1537">[ thread ]</a>
+              <a href="subject.html#1537">[ subject ]</a>
+              <a href="author.html#1537">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&#26446;&#26195;&#40557; (<A HREF="http://lists.freedesktop.org/mailman/listinfo/wayland-devel">linyuzong at 163.com</A>) wrote:
+&gt;<i> build wayland
+</I>&gt;<i> autoreconf: Entering directory `.'
+</I>&gt;<i> autoreconf: configure.ac: not using Gettext
+</I>&gt;<i> autoreconf: running: aclocal -I /home/scott/wayland/share/aclocal --force
+</I>&gt;<i> configure.ac:2: warning: AC_INIT: not a literal:<A HREF="https://bugs.freedesktop.org/enter_bug.cgi?product=wayland">https://bugs.freedesktop.org/enter_bug.cgi?product=wayland</A>
+</I>&gt;<i> autoreconf: configure.ac: tracing
+</I>&gt;<i> configure.ac:2: warning: AC_INIT: not a literal:<A HREF="https://bugs.freedesktop.org/enter_bug.cgi?product=wayland">https://bugs.freedesktop.org/enter_bug.cgi?product=wayland</A>
+</I>&gt;<i> autoreconf: running: libtoolize --install --copy --force
+</I>&gt;<i> libtoolize: putting auxiliary files in `.'.
+</I>&gt;<i> libtoolize: copying file `./config.guess'
+</I>&gt;<i> libtoolize: copying file `./config.sub'
+</I>&gt;<i> libtoolize: copying file `./install-sh'
+</I>&gt;<i> libtoolize: copying file `./ltmain.sh'
+</I>&gt;<i> libtoolize: Consider adding `AC_CONFIG_MACRO_DIR([m4])' to configure.ac and
+</I>&gt;<i> libtoolize: rerunning libtoolize, to keep the correct libtool macros in-tree.
+</I>&gt;<i> libtoolize: Consider adding `-I m4' to ACLOCAL_AMFLAGS in Makefile.am.
+</I>&gt;<i> configure.ac:2: warning: AC_INIT: not a literal:<A HREF="https://bugs.freedesktop.org/enter_bug.cgi?product=wayland">https://bugs.freedesktop.org/enter_bug.cgi?product=wayland</A>
+</I>&gt;<i> autoreconf: running: /usr/bin/autoconf --force
+</I>&gt;<i> configure.ac:2: warning: AC_INIT: not a literal:<A HREF="https://bugs.freedesktop.org/enter_bug.cgi?product=wayland">https://bugs.freedesktop.org/enter_bug.cgi?product=wayland</A>
+</I>&gt;<i> autoreconf: running: /usr/bin/autoheader --force
+</I>&gt;<i> configure.ac:2: warning: AC_INIT: not a literal:<A HREF="https://bugs.freedesktop.org/enter_bug.cgi?product=wayland">https://bugs.freedesktop.org/enter_bug.cgi?product=wayland</A>
+</I>&gt;<i> autoreconf: running: automake --add-missing --copy --force-missing
+</I>&gt;<i> configure.ac:2: warning: AC_INIT: not a literal:<A HREF="https://bugs.freedesktop.org/enter_bug.cgi?product=wayland">https://bugs.freedesktop.org/enter_bug.cgi?product=wayland</A>
+</I>&gt;<i> configure.ac:10: installing `./missing'
+</I>&gt;<i> clients/Makefile.am: installing `./depcomp'
+</I>&gt;<i> autoreconf: Leaving directory `.'
+</I>&gt;<i> checking for a BSD-compatible install... /usr/bin/install -c
+</I>&gt;<i> checking whether build environment is sane... yes
+</I>&gt;<i> checking for a thread-safe mkdir -p... /bin/mkdir -p
+</I>&gt;<i> checking for gawk... no
+</I>&gt;<i> checking for mawk... mawk
+</I>&gt;<i> checking whether make sets $(MAKE)... yes
+</I>&gt;<i> checking for gcc... gcc
+</I>&gt;<i> checking whether the C compiler works... yes
+</I>&gt;<i> checking for C compiler default output file name... a.out
+</I>&gt;<i> checking for suffix of executables...
+</I>&gt;<i> checking whether we are cross compiling... no
+</I>&gt;<i> checking for suffix of object files... o
+</I>&gt;<i> checking whether we are using the GNU C compiler... yes
+</I>&gt;<i> checking whether gcc accepts -g... yes
+</I>&gt;<i> checking for gcc option to accept ISO C89... none needed
+</I>&gt;<i> checking for style of include used by make... GNU
+</I>&gt;<i> checking dependency style of gcc... gcc3
+</I>&gt;<i> checking build system type... i686-pc-linux-gnu
+</I>&gt;<i> checking host system type... i686-pc-linux-gnu
+</I>&gt;<i> checking for a sed that does not truncate output... /bin/sed
+</I>&gt;<i> checking for grep that handles long lines and -e... /bin/grep
+</I>&gt;<i> checking for egrep... /bin/grep -E
+</I>&gt;<i> checking for fgrep... /bin/grep -F
+</I>&gt;<i> checking for ld used by gcc... /usr/bin/ld
+</I>&gt;<i> checking if the linker (/usr/bin/ld) is GNU ld... yes
+</I>&gt;<i> checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+</I>&gt;<i> checking the name lister (/usr/bin/nm -B) interface... BSD nm
+</I>&gt;<i> checking whether ln -s works... yes
+</I>&gt;<i> checking the maximum length of command line arguments... 1572864
+</I>&gt;<i> checking whether the shell understands some XSI constructs... yes
+</I>&gt;<i> checking whether the shell understands &quot;+=&quot;... yes
+</I>&gt;<i> checking for /usr/bin/ld option to reload object files... -r
+</I>&gt;<i> checking for objdump... objdump
+</I>&gt;<i> checking how to recognize dependent libraries... pass_all
+</I>&gt;<i> checking for ar... ar
+</I>&gt;<i> checking for strip... strip
+</I>&gt;<i> checking for ranlib... ranlib
+</I>&gt;<i> checking command to parse /usr/bin/nm -B output from gcc object... ok
+</I>&gt;<i> checking how to run the C preprocessor... gcc -E
+</I>&gt;<i> checking for ANSI C header files... yes
+</I>&gt;<i> checking for sys/types.h... yes
+</I>&gt;<i> checking for sys/stat.h... yes
+</I>&gt;<i> checking for stdlib.h... yes
+</I>&gt;<i> checking for string.h... yes
+</I>&gt;<i> checking for memory.h... yes
+</I>&gt;<i> checking for strings.h... yes
+</I>&gt;<i> checking for inttypes.h... yes
+</I>&gt;<i> checking for stdint.h... yes
+</I>&gt;<i> checking for unistd.h... yes
+</I>&gt;<i> checking for dlfcn.h... yes
+</I>&gt;<i> checking for objdir... .libs
+</I>&gt;<i> checking if gcc supports -fno-rtti -fno-exceptions... no
+</I>&gt;<i> checking for gcc option to produce PIC... -fPIC -DPIC
+</I>&gt;<i> checking if gcc PIC flag -fPIC -DPIC works... yes
+</I>&gt;<i> checking if gcc static flag -static works... yes
+</I>&gt;<i> checking if gcc supports -c -o file.o... yes
+</I>&gt;<i> checking if gcc supports -c -o file.o... (cached) yes
+</I>&gt;<i> checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
+</I>&gt;<i> checking whether -lc should be explicitly linked in... no
+</I>&gt;<i> checking dynamic linker characteristics... GNU/Linux ld.so
+</I>&gt;<i> checking how to hardcode library paths into programs... immediate
+</I>&gt;<i> checking whether stripping libraries is possible... yes
+</I>&gt;<i> checking if libtool supports shared libraries... yes
+</I>&gt;<i> checking whether to build shared libraries... yes
+</I>&gt;<i> checking whether to build static libraries... no
+</I>&gt;<i> checking for pkg-config... /usr/bin/pkg-config
+</I>&gt;<i> checking pkg-config is at least version 0.9.0... yes
+</I>&gt;<i> checking for dlopen... no
+</I>&gt;<i> checking for dlopen in -ldl... yes
+</I>&gt;<i> checking for COMPOSITOR... yes
+</I>&gt;<i> checking for rsvg-convert... no
+</I>&gt;<i> checking for XSERVER_LAUNCHER... yes
+</I>&gt;<i> checking for XCB... yes
+</I>&gt;<i> checking for xcb_poll_for_queued_event... no
+</I>&gt;<i> checking for X11_COMPOSITOR... yes
+</I>&gt;<i> checking for DRM_COMPOSITOR... yes
+</I>&gt;<i> checking for WAYLAND_COMPOSITOR... yes
+</I>&gt;<i> checking for SIMPLE_CLIENT... yes
+</I>&gt;<i> checking for CLIENT... yes
+</I>&gt;<i> checking for POPPLER... no
+</I>&gt;<i> checking for CAIRO_EGL... yes
+</I>&gt;<i> checking for jpeg_CreateDecompress in -ljpeg... yes
+</I>&gt;<i> checking for wayland-scanner... /home/scott/wayland/bin/wayland-scanner
+</I>&gt;<i> configure: creating ./config.status
+</I>&gt;<i> config.status: creating Makefile
+</I>&gt;<i> config.status: creating compositor/Makefile
+</I>&gt;<i> config.status: creating clients/Makefile
+</I>&gt;<i> config.status: creating data/Makefile
+</I>&gt;<i> config.status: creating config.h
+</I>&gt;<i> config.status: executing depfiles commands
+</I>&gt;<i> config.status: executing libtool commands
+</I>&gt;<i> make  all-recursive
+</I>&gt;<i> make[1]: Entering directory `/home/scott/src/wayland/wayland-demos'
+</I>&gt;<i> Making all in compositor
+</I>&gt;<i> make[2]: Entering directory `/home/scott/src/wayland/wayland-demos/compositor'
+</I>&gt;<i>   GEN    screenshooter-server-protocol.h
+</I>&gt;<i>   GEN    screenshooter-protocol.c
+</I>&gt;<i>   GEN    meego-tablet-protocol.c
+</I>&gt;<i>   GEN    meego-tablet-server-protocol.h
+</I>&gt;<i>   GEN    xserver-protocol.c
+</I>&gt;<i>   GEN    xserver-server-protocol.h
+</I>&gt;<i>   GEN    desktop-shell-protocol.c
+</I>&gt;<i>   GEN    desktop-shell-server-protocol.h
+</I>&gt;<i> make  all-am
+</I>&gt;<i> make[3]: Entering directory `/home/scott/src/wayland/wayland-demos/compositor'
+</I>&gt;<i>   CC     desktop_shell_la-shell.lo
+</I>&gt;<i>   CC     desktop_shell_la-switcher.lo
+</I>&gt;<i>   CC     desktop_shell_la-desktop-shell-protocol.lo
+</I>&gt;<i>   CCLD   desktop-shell.la
+</I>&gt;<i>   CC     meego_tablet_shell_la-meego-tablet-shell.lo
+</I>&gt;<i>   CC     meego_tablet_shell_la-meego-tablet-protocol.lo
+</I>&gt;<i>   CCLD   meego-tablet-shell.la
+</I>&gt;<i>   CC     x11_backend_la-compositor-x11.lo
+</I>&gt;<i>   CCLD   x11-backend.la
+</I>&gt;<i>   CC     drm_backend_la-compositor-drm.lo
+</I>&gt;<i>   CC     drm_backend_la-tty.lo
+</I>&gt;<i>   CC     drm_backend_la-evdev.lo
+</I>&gt;<i>   CCLD   drm-backend.la
+</I>&gt;<i>   CC     wayland_backend_la-compositor-wayland.lo
+</I>&gt;<i>   CCLD   wayland-backend.la
+</I>&gt;<i>   CC     wayland_compositor-compositor.o
+</I>&gt;<i>   CC     wayland_compositor-image-loader.o
+</I>&gt;<i> image-loader.c: In function &#8216;read_func&#8217;:
+</I>&gt;<i> image-loader.c:75:11: warning: ignoring return value of &#8216;fread&#8217;, declared with attribute warn_unused_result
+</I>&gt;<i>   CC     wayland_compositor-screenshooter.o
+</I>&gt;<i>   CC     wayland_compositor-screenshooter-protocol.o
+</I>&gt;<i>   CC     wayland_compositor-xserver-launcher.o
+</I>&gt;<i>   CC     wayland_compositor-xserver-protocol.o
+</I>&gt;<i>   CCLD   wayland-compositor
+</I>&gt;<i> make[3]: Leaving directory `/home/scott/src/wayland/wayland-demos/compositor'
+</I>&gt;<i> make[2]: Leaving directory `/home/scott/src/wayland/wayland-demos/compositor'
+</I>&gt;<i> Making all in clients
+</I>&gt;<i> make[2]: Entering directory `/home/scott/src/wayland/wayland-demos/clients'
+</I>&gt;<i>   GEN    screenshooter-client-protocol.h
+</I>&gt;<i>   GEN    screenshooter-protocol.c
+</I>&gt;<i>   GEN    desktop-shell-client-protocol.h
+</I>&gt;<i>   GEN    desktop-shell-protocol.c
+</I>&gt;<i> make  all-am
+</I>&gt;<i> make[3]: Entering directory `/home/scott/src/wayland/wayland-demos/clients'
+</I>&gt;<i>   CC     window.o
+</I>&gt;<i>   CC     cairo-util.o
+</I>&gt;<i> cairo-util.c: In function &#8216;load_jpeg&#8217;:
+</I>&gt;<i> cairo-util.c:313:26: error: &#8216;JCS_EXT_BGRX&#8217; undeclared (first use in this function)
+</I>
+I was able to get around this by using libjpeg-turbo. This constant
+may not exist in libjpeg.
+
+&gt;<i> cairo-util.c:313:26: note: each undeclared identifier is reported only once for each function it appears in
+</I>&gt;<i> make[3]: *** [cairo-util.o] Error 1
+</I>&gt;<i> make[3]: Leaving directory `/home/scott/src/wayland/wayland-demos/clients'
+</I>&gt;<i> make[2]: *** [all] Error 2
+</I>&gt;<i> make[2]: Leaving directory `/home/scott/src/wayland/wayland-demos/clients'
+</I>&gt;<i> make[1]: *** [all-recursive] Error 1
+</I>&gt;<i> make[1]: Leaving directory `/home/scott/src/wayland/wayland-demos'
+</I>&gt;<i> make: *** [all] Error 2
+</I>&gt;<i> google  found   pastebin.com/dpwAJZM7  and
+</I>&gt;<i> unixforum.org/index.php?showtopic=129188
+</I>&gt;<i> thanks
+</I>&gt;<i>  
+</I>&gt;<i>  
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> &#32593;&#26131;&#20844;&#24320;&#35838;&#25512;&#20986;&#21704;&#20315;&#26368;&#21463;&#27426;&#36814;&#12298;&#24184;&#31119;&#12299;&#35838;&#31243;&#65292;&#24110;&#24744;&#20462;&#28385;&#24184;&#31119;&#23398;&#20998;!
+</I>
+&gt;<i> _______________________________________________
+</I>&gt;<i> wayland-devel mailing list
+</I>&gt;<i> <A HREF="http://lists.freedesktop.org/mailman/listinfo/wayland-devel">wayland-devel at lists.freedesktop.org</A>
+</I>&gt;<i> <A HREF="http://lists.freedesktop.org/mailman/listinfo/wayland-devel">http://lists.freedesktop.org/mailman/listinfo/wayland-devel</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001536.html">[PATCH] compositor-*: check for surfaceless_gles2 instead of	surfaceless_opengl
+</A></li>
+	<LI>Next message: <A HREF="001538.html">Patch for updating gtk over wayland interface
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1537">[ date ]</a>
+              <a href="thread.html#1537">[ thread ]</a>
+              <a href="subject.html#1537">[ subject ]</a>
+              <a href="author.html#1537">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="http://lists.freedesktop.org/mailman/listinfo/wayland-devel">More information about the wayland-devel
+mailing list</a><br>
+</body></html>

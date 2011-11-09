@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [webkit-dev] Features defines: Platform.h vs build system
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:webkit-dev%40lists.webkit.org?Subject=Re%3A%20%5Bwebkit-dev%5D%20Features%20defines%3A%20Platform.h%20vs%20build%20system&In-Reply-To=%3C4E89BA3A.7050007%40webkit.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="018129.html">
+   <LINK REL="Next"  HREF="018131.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[webkit-dev] Features defines: Platform.h vs build system</H1>
+    <B>Balazs Kelemen</B> 
+    <A HREF="mailto:webkit-dev%40lists.webkit.org?Subject=Re%3A%20%5Bwebkit-dev%5D%20Features%20defines%3A%20Platform.h%20vs%20build%20system&In-Reply-To=%3C4E89BA3A.7050007%40webkit.org%3E"
+       TITLE="[webkit-dev] Features defines: Platform.h vs build system">kbalazs at webkit.org
+       </A><BR>
+    <I>Mon Oct  3 06:35:54 PDT 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="018129.html">[webkit-dev] The Question of Meta-tag
+</A></li>
+        <LI>Next message: <A HREF="018131.html">[webkit-dev] Features defines: Platform.h vs build system
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18130">[ date ]</a>
+              <a href="thread.html#18130">[ thread ]</a>
+              <a href="subject.html#18130">[ subject ]</a>
+              <a href="author.html#18130">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>     Hi all!
+
+I think we lack a consistent way for setting up the set of feature 
+defines. Some of them are handled via Platform.h and some of them via 
+the build systems. Don't you think all should be handled the same way? 
+This has came up in my mind in connection with the newly introduced 
+CSS_FILTERS define. (<A HREF="https://bugs.webkit.org/show_bug.cgi?id=68652">https://bugs.webkit.org/show_bug.cgi?id=68652</A>) The 
+logic to set the define has only been added to the Mac build system 
+because the feature is Mac-only currently. I don't think it is a good 
+solution. As more platforms would use the feature they also need to add 
+the logic to their build system that is somewhat more difficult than 
+just adding one more ifdef branch to Platform.h. Note that it is not 
+totally avoidable to have some overhead per platform because we need to 
+handle the --css-filters build-webkit switch. However build-webkit 
+already knows how to set up a -D flag on each platform so it's not a big 
+deal.
+I wonder about your opinion on this.
+
+-kbalazs
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="018129.html">[webkit-dev] The Question of Meta-tag
+</A></li>
+	<LI>Next message: <A HREF="018131.html">[webkit-dev] Features defines: Platform.h vs build system
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18130">[ date ]</a>
+              <a href="thread.html#18130">[ thread ]</a>
+              <a href="subject.html#18130">[ subject ]</a>
+              <a href="author.html#18130">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="http://lists.webkit.org/mailman/listinfo.cgi/webkit-dev">More information about the webkit-dev
+mailing list</a><br>
+</body></html>
