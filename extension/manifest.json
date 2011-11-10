@@ -9,7 +9,7 @@
         "https://*/pipermail/*",
         "file://*/*/pony-express/*"
       ],
-      "js": ["hijack.js", "inject.js"]
+      "js": ["pony-express.js", "inject.js"]
     }
   ]
 }

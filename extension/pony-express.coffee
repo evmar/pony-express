@@ -1,5 +1,8 @@
-# Code shared between the hijack background page and the code injected
-# into the hijacked page.
+# This module defines window.ponyExpress.
+#
+# It is injected into pages as a content script (to identify whether
+# we want to replace them) as well as in the replaced pages (to extract
+# information out of the URL).
 
 isPiperMail = (url) ->
   # Parse URL using the DOM, yikes!

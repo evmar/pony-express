@@ -15,7 +15,7 @@ TEMPLATE = """
 <script>@@../ui/status2.js@@
 @@../ui/view.js@@
 @@../pipermail/pipermail.js@@
-@@hijack.js@@
+@@pony-express.js@@
 
 pipermail.status = function(text) {
   if (text) status2.show(text);
