@@ -9,6 +9,7 @@ hijack = ->
 
   ponyExpress.hijacked = true
   document.open()
+  document.write("<!DOCTYPE html>");
   document.write("<script src='" + chrome.extension.getURL('ui.js') + "'></script>");
   # Brain-bender: we want to write the 'ui' var from the above script.
   document.write("<script>document.write(ui);</script>")
