@@ -2,13 +2,15 @@
 # content.
 
 hijack = ->
-  if 'hijacked' of window
+  if 'hijacked' of ponyExpress
     # This comes up when you pushState a new URL.
     console.log 'already hijacked ' + document.location
     return
 
-  window.hijacked = true
+  ponyExpress.hijacked = true
   document.open()
-  document.write(ui)
+  document.write("<script src='" + chrome.extension.getURL('ui.js') + "'></script>");
+  # Brain-bender: we want to write the 'ui' var from the above script.
+  document.write("<script>document.write(ui);</script>")
 
-hijack()
+hijack() if ponyExpress.isPiperMail document.location.href

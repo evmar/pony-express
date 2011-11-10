@@ -22,7 +22,9 @@ pipermail.status = function(text) {
   else status2.clear();
 }
 
-var pm = isPiperMail(document.location.href);
+var pm = ponyExpress.isPiperMail(document.location.href);
+if (!pm)
+  alert('ERROR: injected pony-express ui into non-pipermail page?!');
 
 if (!pm.month) {
   pipermail.loadIndex(pm.base, function(urls) {

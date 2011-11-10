@@ -1,7 +1,7 @@
 # Code shared between the hijack background page and the code injected
 # into the hijacked page.
 
-this.isPiperMail = (url) ->
+isPiperMail = (url) ->
   # Parse URL using the DOM, yikes!
   a = document.createElement 'a'
   a.href = url
@@ -58,3 +58,5 @@ this.isPiperMail = (url) ->
 
   return breakdown
 
+this.ponyExpress =
+  isPiperMail: isPiperMail

@@ -2,6 +2,8 @@
 
 module 'Extension'
 
+isPiperMail = ponyExpress.isPiperMail
+
 test 'isPiperMail', ->
   pm = isPiperMail 'file:///test/pony-express/testdata/webkit-dev/index.html'
   notEqual pm, null, "fire on local testing page"

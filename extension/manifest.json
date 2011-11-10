@@ -2,11 +2,14 @@
   "name": "hijack",
   "version": "1",
   "description": "hijack pipermail archives",
-  "background_page": "background.html",
-  "permissions": [
-    "tabs",
-    "http://*/pipermail/*",
-    "https://*/pipermail/*",
-    "file://*/pipermail/*"
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/pipermail/*",
+        "https://*/pipermail/*",
+        "file://*/*/pony-express/*"
+      ],
+      "js": ["hijack.js", "inject.js"]
+    }
   ]
 }
