@@ -5,11 +5,11 @@ archive URLs and rewrites them into a more pleasant UI.
 
 In pictures, a page that looks like this:
 
-![Screenshot](screenshot-before.png)
+![Screenshot of old page](https://github.com/martine/pony-express/raw/master/screenshot.png)
 
 Transparently becomes a page that looks like this:
 
-![Screenshot](screenshot.png)
+![Screenshot](https://github.com/martine/pony-express/raw/master/screenshot-after.png)
 
 Concretely, Pony Express is comprised of three modules:
 
